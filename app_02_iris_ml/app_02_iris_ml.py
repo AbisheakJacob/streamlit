@@ -2,17 +2,16 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import pickle
+import joblib
 from PIL import Image
 import os
 
-# determing the location if the pickled model
+# determing the location of the csv file
 here = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(here, "classifier.pkl")
+filename = os.path.join(here, "classifier.joblib")
 
-# loading the pickled model to predict on the data
-pickle_in = open(filename, "rb")
-classifier = pickle.load(pickle_in)
+# loading the joblib model to predict on the data
+classifier = joblib.load(filename)
 
 
 def welcome():
@@ -50,7 +49,7 @@ def main():
             result = "Iris-versicolor"
         elif ans == [2]:
             result = "Iris-virginica"
-        st.success("The Output is {}".format(result))
+        st.success("The Species is {}".format(result))
 
 
 if __name__ == "__main__":

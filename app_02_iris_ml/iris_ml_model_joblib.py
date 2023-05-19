@@ -4,7 +4,7 @@ import numpy as np
 import streamlit as st
 import os
 
-# determing the location if the pickled model
+# determing the location of the csv file
 here = os.path.dirname(os.path.abspath(__file__))
 filename = os.path.join(here, "Iris.csv")
 # reading the iris dataset
@@ -52,8 +52,6 @@ score = accuracy_score(y_test, y_pred)
 ##########################################################################################
 
 # pickling the model
-import pickle
+import joblib
 
-pickle_out = open("classifier.pkl", "wb")
-pickle.dump(classifier, pickle_out)
-pickle_out.close()
+joblib.dump(classifier, "classifier.joblib")
