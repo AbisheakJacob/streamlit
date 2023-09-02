@@ -20,7 +20,7 @@ st.title("Newspaper Downloader")
 
 if st.button("Download Economic Times"):
     # initialize the browser
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome("./chromedriver")
 
     # the base url for the site
     url = "https://epaperpdf.download/the-economic-times/"
