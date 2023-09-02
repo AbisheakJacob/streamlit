@@ -1,4 +1,4 @@
 streamlit==1.25.0
 beautifulsoup4==4.12.2
 gdown==4.7.1
-selenium==4.11.2
+selenium==4.2.0
