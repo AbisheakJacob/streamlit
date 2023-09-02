@@ -1,7 +1,5 @@
 # importing the packages
 import streamlit as st
-from tkinter import *
-from tkinter import ttk
 from bs4 import BeautifulSoup
 import gdown
 import os
