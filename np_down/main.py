@@ -68,9 +68,9 @@ if st.button("Download Economic Times"):
         gdown.download(download_url, output_file_path, quiet=False)
         with open(output_file_path, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
-        st.download_button(
+        if st.download_button(
             label="Download", data=pdf_bytes, file_name=output_file_name, key="pdf"
-        )
-        st.success("The Download was successful")
+        ):
+            st.success("The Download was successful")
     except:
         st.error("The Download Failed")
